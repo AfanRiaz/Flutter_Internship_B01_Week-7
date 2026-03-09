@@ -49,21 +49,33 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       Fluttertoast.showToast(msg: "Field is empty",gravity: ToastGravity.BOTTOM);
                     }
                     else{
-                      loading=true;
-                      databaseRef.child('1').set({
-                        'id': 1,
-                        'title': postController.text
-                      }).then((value) {
-                        Fluttertoast.showToast(msg: "post added", gravity: ToastGravity.BOTTOM);
-                        setState(() {
-                          loading = false;
+                      try{
+                        loading = true;
+                        databaseRef.child('1').set({
+                          'id': 1,
+                          'title': postController.text
+                        }).then((value) {
+                          Fluttertoast.showToast(
+                              msg: "post added", gravity: ToastGravity.BOTTOM);
+                          setState(() {
+                            loading = false;
+                          });
+                        }).onError((error, StackTrace) {
+                          Fluttertoast.showToast(msg: error.toString(),
+                              gravity: ToastGravity.BOTTOM);
+                          setState(() {
+                            loading = false;
+                          });
                         });
-                      }).onError((error, StackTrace) {
-                        Fluttertoast.showToast(msg: error.toString(),gravity: ToastGravity.BOTTOM);
+                      }
+                      catch(e){
+                        Fluttertoast.showToast(msg: e.toString());
+                      }
+                      finally{
                         setState(() {
-                          loading = false;
+                          loading=false;
                         });
-                      });
+                      }
                     }
                     postController.clear();
                 },
