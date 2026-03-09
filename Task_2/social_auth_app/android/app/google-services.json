@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "453006389944",
+    "project_id": "internship-week-7",
+    "storage_bucket": "internship-week-7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453006389944:android:ed0896ef23048376cafa4d",
+        "android_client_info": {
+          "package_name": "com.example.social_auth_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453006389944-4hkda6cs6mhnsfl0id82vfssohff352e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.social_auth_app",
+            "certificate_hash": "8702f7fa6b349d0de1b6693090d122203e25d6f6"
+          }
+        },
+        {
+          "client_id": "453006389944-t514vnhosq7kui7jk6p7ihi7mse849ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqlAES7xVXi6HjtU1f1WYlnl_8WKzuhoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453006389944-t514vnhosq7kui7jk6p7ihi7mse849ao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "453006389944-94oljak23vpg74gtvfqp3j7t0saca51h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.socialAuthApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
