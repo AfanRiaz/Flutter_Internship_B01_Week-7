@@ -13,6 +13,7 @@ class GoogleAuth {
       final credential=GoogleAuthProvider.credential(idToken: googleAuth.idToken);
       await auth.signInWithCredential(credential);
 
+
     }
     // try{
     //   GoogleSignIn signIn=GoogleSignIn.instance;
