@@ -8,7 +8,6 @@ class AddPostScreen extends StatefulWidget {
   @override
   State<AddPostScreen> createState() => _AddPostScreenState();
 }
-
 class _AddPostScreenState extends State<AddPostScreen> {
   bool loading=false;
   final databaseRef=FirebaseDatabase.instance.ref('Post');
@@ -51,8 +50,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     else{
                       try{
                         loading = true;
-                        databaseRef.child('1').set({
-                          'id': 1,
+                        String id=DateTime.now().millisecondsSinceEpoch.toString();
+                        databaseRef.child(id).set({
+                          'id': id,
                           'title': postController.text
                         }).then((value) {
                           Fluttertoast.showToast(
