@@ -138,7 +138,11 @@ class _PostScreenState extends State<PostScreen> {
                             PopupMenuItem(
                                 value: 1,
                                 onTap: (){
-                                  ref.child(snapshot.child('id').value.toString()).remove();
+                                  ref.child(snapshot.child('id').value.toString()).remove().then((onValue){
+                                    Fluttertoast.showToast(msg: "Deleted Successfully");
+                                  }).onError((error, StackTrace){
+                                    Fluttertoast.showToast(msg: "Error Occurred");
+                                  });
                                 },
                                 child: ListTile(
                                   leading: Icon(Icons.delete_outlined),
