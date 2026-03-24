@@ -37,8 +37,11 @@ class _PostScreenState extends State<PostScreen> {
               TextButton(
                   onPressed: (){
                     Navigator.pop(context);
+                    setState(() {
+
+                    });
                     ref.child(id).update({
-                      'title' : editController.text.toLowerCase()
+                      'title' : editController.text
                     }
                     ).then((value) {
                       Fluttertoast.showToast(msg: "Updated successfully");

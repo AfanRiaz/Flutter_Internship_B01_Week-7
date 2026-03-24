@@ -49,7 +49,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     }
                     else{
                       try{
-                        loading = true;
+                        setState(() {
+                          loading = true;
+                        });
                         String id=DateTime.now().millisecondsSinceEpoch.toString();
                         databaseRef.child(id).set({
                           'id': id,
@@ -70,11 +72,6 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       }
                       catch(e){
                         Fluttertoast.showToast(msg: e.toString());
-                      }
-                      finally{
-                        setState(() {
-                          loading=false;
-                        });
                       }
                     }
                     postController.clear();
